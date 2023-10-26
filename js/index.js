@@ -4,12 +4,12 @@ const startShareWebcam = document.querySelector("#btn-share-webcam");
 const stopShare = document.querySelector("#btn-interrupt");
 const startRecorder = document.querySelector("#btn-record");
 
-/* const gdmOptions = {
+const gdmOptions = {
   video: true,
   audio: true, // share or not audio
-}; */
+};
 
-const gdmOptions = {
+/* const gdmOptions = {
   video: {
     displaySurface: "window",
   },
@@ -22,7 +22,7 @@ const gdmOptions = {
   surfaceSwitching: "include",
   selfBrowserSurface: "exclude",
   systemAudio: "exclude",
-};
+}; */
 
 async function startCapture(displayMediaOptions) {
   try {
