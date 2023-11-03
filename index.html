@@ -3,15 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Screen Capture API</title>
   </head>
-  <body>
-    <button type="button" id="btn-share">Start Share Window</button>
-    <button type="button" id="btn-share-webcam">Start Share Webcam</button>
-    <button type="button" id="btn-interrupt">Stop Share</button>
-    <button type="button" id="btn-record">Start record</button>
 
-    <video id="video" controls autoplay style="max-width: 600px"></video>
+  <body>
+    <div class="main-container">
+      <video
+        id="video"
+        controls
+        autoplay
+        style="max-width: 600px"
+        class="video"
+      ></video>
+
+      <div class="btn-container">
+        <button type="button" id="btn-share" class="btn">
+          Start Share Window
+        </button>
+        <button type="button" id="btn-share-webcam" class="btn">
+          Start Share Webcam
+        </button>
+        <button type="button" id="btn-interrupt" class="btn">Stop Share</button>
+        <button type="button" id="btn-record" class="btn">Start record</button>
+      </div>
+    </div>
   </body>
   <script src="./js/index.js"></script>
 </html>
