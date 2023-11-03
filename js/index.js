@@ -4,6 +4,8 @@ const startShareWebcam = document.querySelector("#btn-share-webcam");
 const stopShare = document.querySelector("#btn-interrupt");
 const startRecorder = document.querySelector("#btn-record");
 
+console.log(navigator.mediaDevices.getSupportedConstraints());
+
 const gdmOptions = {
   video: true,
   audio: true, // share or not audio
@@ -20,6 +22,8 @@ const gdmOptions = {
     suppressLocalAudioPlayback: true,
   },
   surfaceSwitching: "include",
+  // preferCurrentTab: true,
+  // selfBrowserSurface: "include",
   selfBrowserSurface: "exclude",
   systemAudio: "exclude",
 }; */
@@ -46,9 +50,15 @@ async function startCaptureWebcam(displayMediaOptions) {
 
 function stopCapture() {
   let tracks = videoElem.srcObject.getTracks();
+  const videoTrack = videoElem.srcObject.getVideoTracks()[0];
+
+  console.log("Track settings:");
+  console.log(JSON.stringify(videoTrack.getSettings(), null, 2));
+  console.log("Track constraints:");
+  console.log(JSON.stringify(videoTrack.getConstraints(), null, 2));
 
   // Show Tracks
-  // console.log({ tracks });
+  console.log({ tracks });
 
   tracks.forEach((track) => track.stop());
   videoElem.srcObject = null;
