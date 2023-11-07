@@ -78,6 +78,7 @@ async function startRecord() {
   };
   mediaRecord.start();
   mediaRecord.onstop = (e) => {
+    console.log(data);
     videoElem.src = URL.createObjectURL(
       new Blob(data, {
         type: data[0].type,
